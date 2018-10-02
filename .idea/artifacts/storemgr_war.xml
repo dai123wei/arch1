@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="storemgr:war">
+    <output-path>$PROJECT_DIR$/storemgr/target</output-path>
+    <root id="archive" name="store-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="storemgr:war exploded" />
+    </root>
+  </artifact>
+</component>
