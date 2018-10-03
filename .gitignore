@@ -11,7 +11,6 @@ build
 target
 .idea/.gitignore
 .idea/inspectionProfiles/
-architecture/
 architectureweb/src/main/resources/
 architectureweb/target/
 cart/target/
@@ -24,3 +23,4 @@ goodsmgrweb/target/
 ordermgr/target/
 src/
 storemgr/target/
+front/target/

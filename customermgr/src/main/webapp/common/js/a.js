@@ -1,1 +1,0 @@
-alert("customer a.js");

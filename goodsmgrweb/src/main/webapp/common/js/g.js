@@ -1,1 +1,0 @@
-alert("goods g.js");

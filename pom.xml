@@ -17,6 +17,7 @@
         <module>cart</module>
         <module>ordermgr</module>
         <module>storemgr</module>
+        <module>front</module>
     </modules>
 
     <name>architecture</name>

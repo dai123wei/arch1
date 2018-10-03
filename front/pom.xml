@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>architecture</artifactId>
+        <groupId>com.dw</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>front</artifactId>
+    <packaging>war</packaging>
+
+    <name>front</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>goodsmgr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>cart</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <classifier>api</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>order</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <classifier>api</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>store</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <classifier>api</classifier>
+        </dependency>
+        <dependency>
+            <groupId>com.dw</groupId>
+            <artifactId>customermgr</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+            <classifier>api</classifier>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.7</version>
+                <configuration>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8899</port>
+                            <maxIdleTime>30000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <webAppSourceDirectory>${project.build.directory}/${pom.artifactId}-${pom.version}
+                    </webAppSourceDirectory>
+                    <contextPath>/</contextPath>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
