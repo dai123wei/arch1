@@ -23,9 +23,7 @@
         	<if test="uuid!=null &amp;&amp; uuid > 0">
         		and uuid=#{uuid}
         	</if>  
-        	<if test="orderTime!=null &amp;&amp; orderTime!=''">
-                and orderTime=#{orderTime}
-            </if>
+        	
         </where>
     </select> 
 </mapper>

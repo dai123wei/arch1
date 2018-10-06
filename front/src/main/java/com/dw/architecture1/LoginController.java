@@ -15,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping("/")
 public class LoginController {
     @Autowired
-    private ICustomerService ics = null;
+    private ICustomerService customerService = null;
 
-    @RequestMapping(value = "/toLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/toLogin", method = RequestMethod.GET)
     public String toLogin(){
         return "login";
     }
@@ -27,8 +27,8 @@ public class LoginController {
         if(customerId==null || customerId.trim().length() == 0){
             return "login";
         }
-        ics.getByUuid(1);
-        CustomerModel cm = ics.getByCustomerId(customerId);
+        customerService.getByUuid(1);
+        CustomerModel cm = customerService.getByCustomerId(customerId);
         if(cm == null || cm.getUuid() <= 0){
             return "login";
         }

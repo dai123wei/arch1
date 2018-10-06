@@ -20,11 +20,11 @@
          </listener-class>
      </listener>
      
-     <listener>
-         <!--<listener-class>
+     <!--<listener>
+         <listener-class>
              com.dw.architecture1.ordermgr.queue.QueueReceiver
-         </listener-class>-->
-     </listener>
+         </listener-class>
+     </listener>-->
       
      <!-- Spring配置文件结束 -->
 
