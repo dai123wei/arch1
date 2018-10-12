@@ -45,9 +45,6 @@
                             <maxIdleTime>30000</maxIdleTime>
                         </connector>
                     </connectors>
-                    <webAppSourceDirectory>${project.build.directory}/${pom.artifactId}-${pom.version}
-                    </webAppSourceDirectory>
-                        <contextPath>/</contextPath>
                 </configuration>
             </plugin>
             <plugin>
@@ -75,6 +72,10 @@
                         <overlay>
                             <groupId>com.dw</groupId>
                             <artifactId>storemgr</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>com.dw</groupId>
+                            <artifactId>front</artifactId>
                         </overlay>
                     </overlays>
                 </configuration>
@@ -114,20 +115,10 @@
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>org.apache.cocoon</groupId>
-            <artifactId>cocoon-core</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.0.8.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cocoon.servlet</groupId>
-            <artifactId>cocoon-servlet</artifactId>
-            <version>3.0.0-alpha-3</version>
+            <groupId>com.dw</groupId>
+            <artifactId>front</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
         </dependency>
     </dependencies>
-
 </project>
