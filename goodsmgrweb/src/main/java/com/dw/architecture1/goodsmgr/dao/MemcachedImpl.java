@@ -1,15 +1,14 @@
 package com.dw.architecture1.goodsmgr.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.danga.MemCached.MemCachedClient;
 import com.dw.architecture1.goodsmgr.vo.GoodsModel;
 import com.dw.architecture1.goodsmgr.vo.GoodsQueryModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
-import com.danga.MemCached.MemCachedClient;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Primary

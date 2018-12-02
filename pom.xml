@@ -12,7 +12,6 @@
         <module>architectureweb</module>
         <module>common</module>
         <module>customermgr</module>
-        <module>goodsmgr</module>
         <module>goodsmgrweb</module>
         <module>cart</module>
         <module>ordermgr</module>

@@ -47,4 +47,48 @@
         <property name="basePackage" value="com.dw"/>
         <property name="annotationClass" value="org.springframework.stereotype.Repository"/>
     </bean>
+
+    <!--memcached 客户端 SocketPool-->
+    <bean id="memcachedPool" class="com.danga.MemCached.SockIOPool" factory-method="getInstance"
+          init-method="initialize" destroy-method="shutDown">
+        <constructor-arg><value>neeaMemcachedPool</value></constructor-arg>
+        <property name="servers">
+            <list>
+                <value>192.168.0.30:2222</value>
+            </list>
+        </property>
+        <property name="weights">
+            <list>
+                <value>1</value>
+            </list>
+        </property>
+        <property name="initConn">
+            <value>5</value>
+        </property>
+        <property name="minConn">
+            <value>5</value>
+        </property>
+        <property name="maxConn">
+            <value>250</value>
+        </property>
+        <property name="maintSleep">
+            <value>30</value>
+        </property>
+        <property name="nagle">
+            <value>false</value>
+        </property>
+        <property name="maxIdle">
+            <value>6000</value>
+        </property>
+        <property name="socketTO">
+            <value>3000</value>
+        </property>
+    </bean>
+
+    <!--memcached client-->
+    <bean id="memCachedClient" class="com.danga.MemCached.MemCachedClient">
+        <constructor-arg>
+            <value>neeaMemcachedPool</value>
+        </constructor-arg>
+    </bean>
 </beans>

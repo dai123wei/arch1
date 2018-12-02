@@ -31,7 +31,7 @@
     <select id="getByIds" parameterType="String" resultType="GM">
         select * from tbl_goods where uuid in (#ids)
     </select>
-    <select id="getByIdsConditionPage" parameterType="GQM" resultType="int">
+    <select id="getIdsByConditionPage" parameterType="GQM" resultType="int">
         select uuid from tbl_goods
         <where>
             <if test="uuid!=null &amp;&amp; uuid > 0">

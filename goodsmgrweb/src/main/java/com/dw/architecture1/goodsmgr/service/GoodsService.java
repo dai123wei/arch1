@@ -1,14 +1,13 @@
 package com.dw.architecture1.goodsmgr.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import com.dw.common.service.BaseService;
-
 import com.dw.architecture1.goodsmgr.dao.GoodsDAO;
 import com.dw.architecture1.goodsmgr.vo.GoodsModel;
 import com.dw.architecture1.goodsmgr.vo.GoodsQueryModel;
+import com.dw.common.service.BaseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
