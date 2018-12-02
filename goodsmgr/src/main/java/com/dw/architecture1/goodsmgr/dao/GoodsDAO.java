@@ -6,7 +6,7 @@ import com.dw.common.dao.BaseDAO;
 import com.dw.architecture1.goodsmgr.vo.GoodsModel;
 import com.dw.architecture1.goodsmgr.vo.GoodsQueryModel;
 
-@Repository
+//@Repository
 public interface GoodsDAO extends BaseDAO<GoodsModel,GoodsQueryModel>{
 	
 }
