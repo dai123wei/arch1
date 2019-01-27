@@ -99,54 +99,7 @@ public class IndexController {
     public String order(@CookieValue("MyLogin") String myLogin){
         //1:查出这个人购物车所有的信息
         int customerId = Integer.parseInt(myLogin.split(",")[0]);
-        //orderService.order(customerId);
-        CartQueryModel cqm = new CartQueryModel();
-        cqm.getPage().setPageShow(1000);
-        cqm.setCustomerUuid(customerId);
-
-        Page<CartModel> page = cartService.getByConditionPage(cqm);
-
-        //2
-        float totalMoney = 0.0f;
-        for(CartModel cm : page.getResult()){
-            totalMoney += 10;
-        }
-        OrderModel om = new OrderModel();
-        om.setCustomerUuid(customerId);
-        om.setOrderTime(DateFormatHelper.long2str(System.currentTimeMillis()));
-        om.setSaveMoney(0.0F);
-        om.setTotalMoney(totalMoney);
-        om.setState(1);
-
-        orderService.create(om);
-
-        OrderQueryModel oqm = new OrderQueryModel();
-        oqm.setOrderTime(om.getOrderTime());
-
-        Page<OrderModel> omPage = orderService.getByConditionPage(oqm);
-        om = omPage.getResult().get(0);
-
-        //3
-        for (CartModel cm : page.getResult()){
-            OrderDetailModel odm = new OrderDetailModel();
-            odm.setGoodsUuid(cm.getGoodsUuid());
-            odm.setOrderNum(cm.getBuyNum());
-            odm.setPrice(10.0F);
-            odm.setMoney(odm.getPrice() * odm.getOrderNum());
-            odm.setSaveMoney(0.0F);
-            odm.setOrderUuid(om.getUuid());
-
-            orderDetailService.create(odm);
-
-            //4
-            StoreModel sm = storeService.getByGoodsUuid(cm.getGoodsUuid());
-            sm.setStoreNum(sm.getStoreNum() - odm.getOrderNum());
-            storeService.update(sm);
-
-            //5
-            cartService.delete(cm.getUuid());
-        }
-
+        orderService.order(customerId);
         return "success";
     }
 }
